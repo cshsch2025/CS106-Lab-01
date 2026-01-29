@@ -10,7 +10,13 @@
  */
 int bitMatch(int x, int y)
 {
-    return 2;
+    /*
+        Case 1: Match on 1
+        Case 2: Match on 0
+        eg. 1010 -> 0101 & -> 0100
+            1001 -> 0110
+    */
+    return (x & y) | (~x & ~y);
 }
 
 int test_bitMatch(int x, int y)
@@ -27,8 +33,8 @@ int test_bitMatch(int x, int y)
 
 int main(void)
 {
-    int x = 0;
-    int y = 0;
+    int x = 0x7;
+    int y = 0xE;
     printf("expected: %x\n", bitMatch(x, y));
     printf("actual  : %x\n", test_bitMatch(x, y));
 }

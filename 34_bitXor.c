@@ -9,7 +9,7 @@
  */
 int bitXor(int x, int y)
 {
-    return 2;
+    return ;
 }
 
 int test_bitXor(int x, int y)
